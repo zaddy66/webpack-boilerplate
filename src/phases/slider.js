@@ -1,12 +1,15 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Flip from "gsap/dist/Flip";
+// @ts-ignore
 import Swiper from 'swiper';
-import { Navigation, Pagination, Controller } from "swiper/modules";
+import { Navigation, Pagination, Controller, EffectFade } from "swiper";
 
 function slider() {
+  Swiper.use([Navigation, Pagination, Controller, EffectFade]); // Register modules globally
     gsap.registerPlugin(ScrollTrigger)
     gsap.registerPlugin(Flip)
+    console.log(EffectFade)
     
     //before anything happen we want the slider image to be append on circular images.
 $(".popup-img-trigger").click(function () {
@@ -80,6 +83,7 @@ $(".popup-img-trigger").click(function () {
   
   //sm line slider
   const swiperLine = new Swiper(".swiper.is--r-title", {
+    modules: [EffectFade],
     slidesPerView: 1,
     spaceBetween: 30,
     effect: "fade",
