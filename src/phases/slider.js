@@ -87,8 +87,11 @@ $(".popup-img-trigger").click(function () {
     slidesPerView: 1,
     spaceBetween: 30,
     effect: "fade",
-    slideActiveClass: "is--active",
+    // slideActiveClass: "is--active",
     allowTouchMove: false,
+    fadeEffect: { // Optional fade effect settings
+      crossFade: true,
+    },
   });
   
   swiperTest.controller.control = swiperLine;

@@ -27,17 +27,16 @@ module.exports = (env, argv) => {
       static: {
         directory: path.resolve(__dirname, 'dist'),
       },
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+      },
       port: 3000,
       open: true,
       hot: true,
       compress: true,
       historyApiFallback: true,
-    },
-    optimization: {
-    //   minimize: isProduction, // Enable minimization in production mode
-    //   splitChunks: {
-    //     chunks: 'all', // Split vendor and app code
-    //   },
     },
   };
 };
